@@ -1,20 +1,16 @@
 ---
-title: Python script to automatically close a program at specified time
-description: Learn how to use Python to close a program at a certain time.
-category: programming
-excerpt: Making a program which automates the closing of softwares at a certain time
+title: How to automate closing running applications on Windows with Python
+description: How to Automate Closing Applications on Windows with Python. Learn how to create a simple and useful programme that can close any running application on your Windows computer at a specified time using Python.
+excerpt: Out of boredom today, I decided to create a Python application capable of automatically closing other applications at the time specified.
 keywords:
-  - automation
   - python automation
-  - taskkill command
-  - terminal
-  - windows
-  - kill application
+  - close windows applications with python
+  - subprocess and taskkill in python
+  - automate desktop activities in python
 date: 2021-07-15
-expiry: 2023-05-05
+expiry: 2023-08-20
 tags:
   - python
-  - terminal
 ---
 
 Out of boredom today, I decided to create a Python application capable of automatically closing other applications at the time specified. This could be a perfect idea for an application, but I do not think I will make it now. Maybe later.
@@ -24,15 +20,15 @@ I'm going to code it in Python. I'm going to use an object-oriented approach sin
 
 ## How It Will Work
 
-Okay, so the application will be multi-threaded, which means it will execute on numerous threads. The application will request two pieces of information from the user: the name of the programme and its end time. Both will then be processed and run on a separate thread. A function will be executed on each thread to determine when a programme should be terminated. If it has, it terminates the application.
+Okay, so the application will be multi-threaded, which means it will execute on multiple threads. The application will request two pieces of information from the user: the name of the programme and its end time. Both will then be processed and run on a separate thread. A function will be executed on each thread to determine when a programme should be terminated. If it should, it terminates the application.
 
-The command `taskkill \IM %application name% \F` will be performed to terminate the application, where `%application name%` is the name of the application to be killed. When the time comes, this command will forcefully close all instances of the application. Isn't it simple?
+The command `taskkill /IM %application name% /F` will be performed to terminate the application, where `%application name%` is the name of the application to be killed. When the time comes, this command will forcefully close all instances of the application. Isn't it simple?
 
 ## Coding The Script
 
 ```python
 import time as time_module # The time module
-from threading import Thread #The threading module will allow us to run the program on multiple threads
+from threading import Thread #The threading module will allow us to run the programme on multiple threads
 from subprocess import Popen #This allows us to execute shell commands
 
 
@@ -77,9 +73,9 @@ That is the code shown above. It's fairly straightforward. There is an inner fun
 
 ## Using the Script
 
-Now that we are done coding the script, it’s now time to use it. The most suitable way to run this programme was by making it into a CLI tool, but... Let’s just use it the hard-coded way.
+Now that we are done coding the script, it’s now time to use it. The most suitable way to run this programme was by making it into a CLI tool, but... Let’s just use it a hard-coded way.
 
-So, to make the App Killer watch and kill an app, you pass two parameters to its constructor: the app’s executable name and the time at which it is to quit.
+So, to make  App Killer watch and kill an app, you pass two parameters to its constructor: the app’s executable name and the time at which it is to quit.
 
 So for the example which I am going to be making, I am going to kill two apps: Node JS and my Brave browser. NodeJS will close at 08:30 (i.e., 8:30 AM) and Brave Browser will close at 21:21 (i.e., 9:21 PM).
 
