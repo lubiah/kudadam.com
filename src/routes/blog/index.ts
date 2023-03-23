@@ -1,0 +1,3 @@
+export getArticlesList: Function = ()=> {
+
+}
