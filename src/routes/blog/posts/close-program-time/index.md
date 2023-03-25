@@ -2,6 +2,7 @@
 title: How to automate closing running applications on Windows with Python
 description: How to Automate Closing Applications on Windows with Python. Learn how to create a simple and useful programme that can close any running application on your Windows computer at a specified time using Python.
 excerpt: Out of boredom today, I decided to create a Python application capable of automatically closing other applications at the time specified.
+image: https://ik.imagekit.io/kudadam/blog/close-program-time/hero
 keywords:
   - python automation
   - close windows applications with python
