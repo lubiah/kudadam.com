@@ -16,7 +16,8 @@ const config = {
 
 	kit: {
 		alias: {
-			"$components": "./src/components"
+			$components: "src/components",
+			$icons: "src/icons"
 		},
 		adapter: adapter()
 	}
