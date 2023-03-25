@@ -4,7 +4,12 @@
     export let image: string;
     export let slug: string;
     export let date: Date;
+
+    import CalenderIcon from "$icons/calender.svg?component";
 </script>
+
+<!-- @component Blog Card - Used to display blog posts
+ -->
 
 <article class="w-80">
     <div>
@@ -14,7 +19,7 @@
         <h2 class="text-lg font-extrabold leading-tight"><a href="/blog/{slug}">{title}</a></h2>
         <p class="text-xs leading-normal text-gray-500">{excerpt}</p>
         <div class="text-xs text-gray-500">
-            <p><time>{new Date().toLocaleString('en-US', { dateStyle: 'long' })}</time></p>
+            <p class="flex gap-x-1 items-center"><CalenderIcon width="20" height="20"/><time datetime={new Date(date).toISOString()}>{new Date(date).toLocaleString('en-US', { dateStyle: 'long' })}</time></p>
         </div>
     </div>
 </article>
