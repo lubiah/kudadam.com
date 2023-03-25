@@ -10,7 +10,10 @@ declare global {
 
 	interface BlogPost {
 		title: string,
-		slug: string
+		excerpt: string,
+		image: string,
+		slug: string,
+		date: Date
 	}
 }
 
