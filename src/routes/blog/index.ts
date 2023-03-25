@@ -8,6 +8,7 @@ export const getArticlesList = async () : Promise<BlogPost[]> => {
         let slug = path.split("/")[2];
         let index: any = await _import[path]();
         const metadata: BlogPost = {...index!, slug }
+        metadata.date = new Date(index.date);
         files.push(metadata);
     }
 
