@@ -6,7 +6,7 @@
     export let date: Date;
     export let readingTime: BlogPost['readingTime']
 
-    import CalenderIcon from "$icons/calender.svg?component";
+    import CalenderIcon from "$icons/calander.svg?component";
     import ClockIcon from "$icons/clock.svg?component";
 </script>
 
