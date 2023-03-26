@@ -9,15 +9,24 @@
 </script>
 
 
-<main class="laptop:mx-10">
-
-    <article class="grid grid-cols-[1fr_min(65ch,calc(100%-10px))_1fr] [&_>_*]:col-start-2 [&_>_*]:col-end-3">
+<main class="max-w-screen-laptop mx-auto min-w-0">
+    <article>
         <h1 class="mb-12 text-gray-800">{data.metadata.title}</h1>
-        <img src={data.metadata.image} alt="" class="w-full h-[400px] mb-6">
-        <ul class="text-gray-500 mb-6">
+        <img src={data.metadata.image} alt="" class="w-full h-auto max-h-[250px] mb-6 !col-[1/-1]">
+        <ul class="text-gray-500 mb-6 text-sm flex flex-col gap-2">
         <li class="flex items-center gap-x-1"><ClockIcon height="20" width="20"/><span>{data.metadata.readingTime.text}</span></li>
         <li class="flex items-center gap-x-1"><CalendarIcon height="20" width="20"/><time datetime={new Date(data.metadata.date).toISOString()}>{new Date(data.metadata.date).toLocaleString('en-US', { dateStyle: 'long' })}</time></li>
         </ul>
         <svelte:component this={data.component}/>
     </article>
 </main>
+
+<style type="text/postcss">
+    article {
+        @apply grid grid-cols-[1fr_min(65ch,calc(100%-32px))_1fr];
+    }
+
+    article :global(*) {
+        @apply col-start-2 col-end-3;
+    }
+</style>
