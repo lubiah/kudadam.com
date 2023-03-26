@@ -1,6 +1,7 @@
 const forms = require('@tailwindcss/forms');
 const colours = require("tailwindcss/colors");
 
+/**@type {import("tailwindcss").Config} */
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
@@ -16,7 +17,11 @@ const config = {
 		colors: {
 			gray: colours.neutral
 		},
-		extend: {}
+		extend: {
+			lineHeight: {
+				'tighter': "1.15"
+			}
+		}
 	},
 
 	plugins: [forms]
