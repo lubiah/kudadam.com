@@ -1,14 +1,15 @@
 export const getArticlesList = async () : Promise<BlogPost[]> => {
-    const _import = import.meta.glob("./posts/**/*.md", {
-        import: "metadata"
-    });
+    const _import = import.meta.glob("./posts/**/*.md");
     const files: BlogPost[] = [];
+    const readingTime = (await import("$utils/reading-time")).default
 
     for (const path in _import){
-        let slug = path.split("/")[2];
-        let index: any = await _import[path]();
-        const metadata: BlogPost = {...index!, slug }
-        metadata.date = new Date(index.date);
+        const slug = path.split("/")[2];
+        const index: any = await _import[path]();
+        const html = index.default.render()['html'];
+        const metadata: BlogPost = {...index.metadata!, slug }
+        metadata.date = new Date(index.metadata.date);
+        metadata.readingTime = readingTime(html);
         files.push(metadata);
     }
 

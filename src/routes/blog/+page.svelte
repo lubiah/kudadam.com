@@ -14,6 +14,7 @@
             date={article.date}
             image={article.image}
             excerpt={article.excerpt}
+            readingTime={article.readingTime}
         />
     {/each}
 </main>
