@@ -43,7 +43,7 @@
 	},
 	"type": "module",
 	"lint-staged": {
-		"*.svelte": "eslint --cache --fix",
+		"*.svelte": "eslint  --fix",
 		"*.{js,css,md,svelte}": "prettier --write"
 	}
 }
