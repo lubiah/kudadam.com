@@ -2,7 +2,6 @@ const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 const postcssPresetEnv = require('postcss-preset-env');
 
-
 const config = {
 	plugins: [
 		postcssPresetEnv({

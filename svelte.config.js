@@ -9,16 +9,13 @@ const config = {
 
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
-	preprocess: [
-		vitePreprocess(),
-		mdsvex(mdsvexConfig)
-	],
+	preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)],
 
 	kit: {
 		alias: {
-			$components: "src/components",
-			$icons: "src/icons",
-			$utils: "src/utils"
+			$components: 'src/components',
+			$icons: 'src/icons',
+			$utils: 'src/utils'
 		},
 		adapter: adapter()
 	}

@@ -76,7 +76,7 @@ That is the code shown above. It's fairly straightforward. There is an inner fun
 
 Now that we are done coding the script, it’s now time to use it. The most suitable way to run this programme was by making it into a CLI tool, but... Let’s just use it a hard-coded way.
 
-So, to make  App Killer watch and kill an app, you pass two parameters to its constructor: the app’s executable name and the time at which it is to quit.
+So, to make App Killer watch and kill an app, you pass two parameters to its constructor: the app’s executable name and the time at which it is to quit.
 
 So for the example which I am going to be making, I am going to kill two apps: Node JS and my Brave browser. NodeJS will close at 08:30 (i.e., 8:30 AM) and Brave Browser will close at 21:21 (i.e., 9:21 PM).
 
