@@ -3,33 +3,50 @@
 
 	import ClockIcon from '$icons/clock.svg?component';
 	import CalendarIcon from '$icons/calendar.svg?component';
+	import tocSpy from './tocSpy';
+	import { onMount } from 'svelte';
 
 	export let data: PageData;
+
+	onMount(async () => {
+		const article = document.querySelector('article');
+		if (article) tocSpy(article);
+	});
 </script>
 
 <main class="max-w-screen-laptop mx-auto min-w-0">
-	<article>
-		<h1 class="mb-12 tablet:mb-16 laptop:mb-20 laptop:!col-[1/-1]">{data.metadata.title}</h1>
-		<img
-			src={data.metadata.image}
-			alt=""
-			class="w-full h-auto max-h-[250px] tablet:max-h-[400px] laptop:max-h-[600px] mb-6 tablet:mb-8 laptop:mb-10 !col-[1/-1]"
-		/>
-		<ul
-			class="text-gray-500 mb-6 tablet:mb-8 laptop:mb-10 text-xs laptop:text-base flex flex-col tablet:flex-row gap-2 tablet:gap-x-6"
-		>
-			<li class="flex items-center gap-x-1">
-				<ClockIcon height="16" width="16" /><span>{data.metadata.readingTime}</span>
-			</li>
-			<li class="flex items-center gap-x-1">
-				<CalendarIcon height="16" width="16" /><time
-					datetime={new Date(data.metadata.date).toISOString()}
-					>{new Date(data.metadata.date).toLocaleString('en-US', { dateStyle: 'long' })}</time
-				>
-			</li>
-		</ul>
-		<svelte:component this={data.component} />
-	</article>
+	<h1 class="mb-12 tablet:mb-16 laptop:mb-20 laptop:!col-[1/-1] mx-4 laptop:mx-0">
+		{data.metadata.title}
+	</h1>
+	<img
+		src={data.metadata.image}
+		alt=""
+		class="w-full h-auto max-h-[250px] tablet:max-h-[400px] laptop:max-h-[600px] mb-6 tablet:mb-8 laptop:mb-10 !col-[1/-1]"
+	/>
+	<ul
+		class="text-gray-500 mb-6 tablet:mb-8 laptop:mb-10 text-xs laptop:text-base flex flex-col tablet:flex-row gap-2 tablet:gap-x-6 mx-4 laptop:mx-0"
+	>
+		<li class="flex items-center gap-x-1">
+			<ClockIcon height="16" width="16" /><span>{data.metadata.readingTime}</span>
+		</li>
+		<li class="flex items-center gap-x-1">
+			<CalendarIcon height="16" width="16" /><time
+				datetime={new Date(data.metadata.date).toISOString()}
+				>{new Date(data.metadata.date).toLocaleString('en-US', { dateStyle: 'long' })}</time
+			>
+		</li>
+	</ul>
+	<div class="laptop:flex justify-between">
+		<article>
+			<svelte:component this={data.component} />
+		</article>
+		<nav class="toc hidden laptop:block">
+			<p class="font-bold mb-3 pl-4">Table of contents</p>
+			<div>
+				{@html data.toc}
+			</div>
+		</nav>
+	</div>
 </main>
 
 <style lang="postcss">
@@ -43,5 +60,29 @@
 
 	article :global(pre) {
 		@apply col-[1/4] laptop:col-[1/2];
+	}
+
+	nav.toc {
+		@apply border-l h-max sticky top-[20%];
+
+		& :global(a) {
+			@apply pl-4 py-1 transition-colors duration-300 border-l-2 border-[color:transparent] hover:border-gray-300;
+		}
+
+		& :global(.active) {
+			@apply border-l-2 border-secondary-500 text-secondary-600;
+		}
+
+		& :global(*) {
+			@apply text-sm text-gray-500;
+		}
+
+		& :global(ul) {
+			@apply list-none;
+
+			& :global(li) {
+				@apply py-2;
+			}
+		}
 	}
 </style>

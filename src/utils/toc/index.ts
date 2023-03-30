@@ -4,8 +4,8 @@ import type { Cheerio, AnyNode } from "cheerio";
 const generateTableOfContents = (html: string) => {
     const $ = load(html);
     const HEADINGS = $("h2,h3,h4,h5,h6");
-    const TOC_CONTAINER = $("<nav></nav>");
     const UL_ELEMENT = $("<ul></ul>");
+    const NAV_ELEMENT = $("<nav></nav>");
 
     let first: Cheerio<AnyNode>;
     let second: Cheerio<AnyNode>;
@@ -21,6 +21,8 @@ const generateTableOfContents = (html: string) => {
         
         const LI_ELEMENT = $("<li></li>");
         const LINK_ELEMENT = $("<a></a>");
+        $(LINK_ELEMENT).attr("class",'toc-link');
+        $(LINK_ELEMENT).attr('href',`#${ID}`);
 
         LINK_ELEMENT.html(TITLE)
 
@@ -28,7 +30,7 @@ const generateTableOfContents = (html: string) => {
         switch (LEVEL){
             case 2:
                 LI_ELEMENT.append(LINK_ELEMENT);
-                UL_ELEMENT.append(LINK_ELEMENT);
+                UL_ELEMENT.append(LI_ELEMENT);
                 break;
             
             case 3:
@@ -64,12 +66,12 @@ const generateTableOfContents = (html: string) => {
                 
         }
         
-
     })
 
-    TOC_CONTAINER.append(UL_ELEMENT);
+    NAV_ELEMENT.append(UL_ELEMENT);
+    return NAV_ELEMENT.html();
 
-    return TOC_CONTAINER.html()
+    
 
 }
 

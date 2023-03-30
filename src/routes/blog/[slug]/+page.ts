@@ -4,10 +4,12 @@ export const load = (async ({ params, data }) => {
 	const { slug } = params;
 	const article = await import(`../posts/${slug}/index.md`);
 	const component = await article.default;
-	const metadata: BlogPost = { ...article.metadata, slug, ...data };
+	const readingTime = data.readingTime;
+	const metadata: BlogPost = { ...article.metadata, slug, readingTime };
 
 	return {
 		component,
-		metadata
+		metadata,
+		toc: data.toc
 	};
 }) satisfies PageLoad;
