@@ -28,47 +28,25 @@ The command `taskkill /IM %application name% /F` will be performed to terminate 
 ## Coding The Script
 
 ```python
-import time as time_module # The time module
-from threading import Thread #The threading module will allow us to run the programme on multiple threads
-from subprocess import Popen #This allows us to execute shell commands
+import time as time_module
+from threading import Thread
+from subprocess import Popen
 
 
 class AppKiller:
-  """
-  The code for our app
-  """
   def __init__(self, name, time):
-    self.name = name #The application's name
-    self.time = time #The time at which it is to close
+    self.name = name
+    self.time = time
 
   def get_time(self):
-    #This function returns the current time using the time module
     return str(time_module.strftime("%R"))
 
   def watch(self):
-    #This is the function which does the killing of the application
-    #It runs an inner function which loops every two seconds to check
-    #if the current time is equal to the closing time of the application
-    #it runs a shell command which takes the application's name and then
-    #kills it
     def inner_function():
       while self.get_time() != self.time:
-
         time_module.sleep(2)
       command = Popen(["taskkill","/IM",self.name,"/F"],shell=True)
     Thread(target=inner_function).start()
-
-"""
-  Example
-  =======
-
-  brave = AppKiller("brave.exe","08:32")
-  brave.watch()
-
-  node_js = AppKiller("node.js","21:13")
-  node_js.watch()
-"""
-
 ```
 
 That is the code shown above. It's fairly straightforward. There is an inner function within the `watch` method that checks if the current time is identical to the end time of an app. If it is, the application is terminated. If it isn't, it sleeps for 2 seconds before checking again.
