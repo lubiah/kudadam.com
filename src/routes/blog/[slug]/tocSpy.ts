@@ -4,20 +4,20 @@ const spy = (container: HTMLElement) => {
 			entries.forEach((entry) => {
 				const ID = entry.target.id;
 				if (entry.isIntersecting) {
-					document.querySelectorAll(".toc-link").forEach((i) => i.classList.remove("active"));
+					document.querySelectorAll('.toc-link').forEach((i) => i.classList.remove('active'));
 					document
-						.querySelector(".toc")
+						.querySelector('.toc')
 						?.querySelector(`a[href='#${ID}']`)
-						?.classList.add("active");
+						?.classList.add('active');
 				}
 			});
 		},
 		{
-			rootMargin: "0px 0px -90% 0px"
+			rootMargin: '0px 0px -90% 0px'
 		}
 	);
 
-	container.querySelectorAll("h2,h3,h4,h5,h6").forEach((heading) => {
+	container.querySelectorAll('h2,h3,h4,h5,h6').forEach((heading) => {
 		observer.observe(heading);
 	});
 
@@ -27,6 +27,5 @@ const spy = (container: HTMLElement) => {
 		}
 	};
 };
-
 
 export default spy;

@@ -5,6 +5,7 @@ export const getArticlesList = async (): Promise<BlogPost[]> => {
 
 	for (const path in _import) {
 		const slug = path.split('/')[2];
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const index: any = await _import[path]();
 		const html = index.default.render()['html'];
 		const metadata: BlogPost = { ...index.metadata, slug };
