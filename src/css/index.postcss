@@ -1,3 +1,5 @@
+@import "./torchlight.postcss";
+
 /* Write your global styles here, in PostCSS syntax */
 @tailwind base;
 @tailwind components;
@@ -48,13 +50,13 @@
 	}
 
 	pre {
-		white-space: pre-wrap;
-		word-wrap: break-word;
+		white-space: pre;
+		overflow-x: auto;
+		word-break: break-word;
+		@apply my-6;
+		@apply p-3;
 	}
-
-	code {
-		white-space: pre-wrap;
-	}
+	
 }
 
 /* inter-regular - latin */

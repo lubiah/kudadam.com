@@ -53,6 +53,7 @@ class AppKiller:
     #kills it
     def inner_function():
       while self.get_time() != self.time:
+
         time_module.sleep(2)
       command = Popen(["taskkill","/IM",self.name,"/F"],shell=True)
     Thread(target=inner_function).start()
@@ -84,8 +85,7 @@ So in our code, we will write:
 
 ```python
 brave = AppKiller("brave.exe","21:21")
-brave.watch()
-
+brave.watch() # [tl! focus]
 node_js = AppKiller("node.exe","08:30")
 node_js.watch()
 ```

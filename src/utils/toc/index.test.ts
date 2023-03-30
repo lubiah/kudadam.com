@@ -1,0 +1,81 @@
+import generateTableOfContents from './';
+import { describe, expect, it } from "vitest";
+
+describe('generateTableOfContents', () => {
+  it('generates a table of contents from a HTML string', () => {
+    const html = `
+    <h2 id='heading-2'>Heading 2</h2>
+    <h3 id='heading-3'>Heading 3</h3>
+    <h3 id='heading-3'>Heading 3</h3>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h2 id='heading-2'>Heading 2</h2>
+    <h3 id='heading-3'>Heading 3</h3>
+    <h3 id='heading-3'>Heading 3</h3>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h2 id='heading-2'>Heading 2</h2>
+    <h3 id='heading-3'>Heading 3</h3>
+    <h3 id='heading-3'>Heading 3</h3>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h2 id='heading-2'>Heading 2</h2>
+    <h3 id='heading-3'>Heading 3</h3>
+    <h3 id='heading-3'>Heading 3</h3>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h2 id='heading-2'>Heading 2</h2>
+    <h3 id='heading-3'>Heading 3</h3>
+    <h3 id='heading-3'>Heading 3</h3>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h4 id='heading-3'>Heading 4</h4>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h5 id='heading-3'>Heading 5</h5>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    <h6 id='heading-3'>Heading 6</h6>
+    `;
+    const toc = generateTableOfContents(html);
+    console.log(toc)
+  });
+});
