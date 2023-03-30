@@ -29,7 +29,7 @@ const config = defineConfig({
 		],
 		/**
 		 * dark-plus
-		 * github-dark (thinking about it)
+		 * dracula
 		 */
 		[
 			remark_torchlight,
