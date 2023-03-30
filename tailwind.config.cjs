@@ -15,7 +15,8 @@ const config = {
 			tv: '1536px'
 		},
 		colors: {
-			gray: colours.neutral
+			gray: colours.neutral,
+			secondary: colours.purple
 		},
 		extend: {
 			lineHeight: {
