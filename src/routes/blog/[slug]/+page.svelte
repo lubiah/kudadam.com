@@ -66,7 +66,7 @@
 		@apply border-l h-max sticky top-[20%];
 
 		& :global(a) {
-			@apply pl-4 py-1 transition-colors duration-300 border-l-2 border-[color:transparent] hover:border-gray-300;
+			@apply pl-4 py-0.5 transition-colors duration-300 border-l-2 border-[color:transparent] hover:border-gray-300;
 		}
 
 		& :global(.active) {
