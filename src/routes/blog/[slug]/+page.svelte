@@ -21,7 +21,7 @@
 	<img
 		src={data.metadata.image}
 		alt=""
-		class="w-full h-auto max-h-[250px] tablet:max-h-[400px] laptop:max-h-[600px] mb-6 tablet:mb-8 laptop:mb-10 !col-[1/-1]"
+		class="w-full h-auto max-h-[250px] tablet:max-h-[400px] mb-6 tablet:mb-8 laptop:mb-10 !col-[1/-1]"
 	/>
 	<ul
 		class="text-gray-500 mb-6 tablet:mb-8 laptop:mb-10 text-xs laptop:text-base flex flex-col tablet:flex-row gap-2 tablet:gap-x-6 mx-4 laptop:mx-0"
@@ -69,6 +69,10 @@
 			@apply pl-4 py-0.5 transition-colors duration-300 border-l-2 border-[color:transparent] hover:border-gray-300;
 		}
 
+		& :global(li) {
+			@apply py-1;
+		}
+
 		& :global(.active) {
 			@apply border-l-2 border-secondary-500 text-secondary-600;
 		}
@@ -79,10 +83,6 @@
 
 		& :global(ul) {
 			@apply list-none;
-
-			& :global(li) {
-				@apply py-2;
-			}
 		}
 	}
 </style>
