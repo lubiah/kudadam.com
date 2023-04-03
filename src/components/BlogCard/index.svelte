@@ -19,7 +19,7 @@
 	</div>
 	<div class="py-2 px-1 flex flex-col gap-y-3">
 		<h2 class="text-lg font-extrabold leading-tight"><a href="/blog/{slug}">{title}</a></h2>
-		<p class="text-xs leading-normal text-gray-500">{excerpt}</p>
+		<p class="text-xs leading-normal text-gray-500 line-clamp-3">{excerpt}</p>
 		<div class="text-xs text-gray-500 justify-between flex">
 			<p class="flex gap-x-1 items-center">
 				<CalenderIcon width="20" height="20" /><time datetime={new Date(date).toISOString()}

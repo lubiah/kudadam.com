@@ -8,15 +8,18 @@
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
 :root {
-	/** https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=360&minRatio=1.125&maxFontSize=18&maxWidth=1536&maxRatio=1.333&steps=base%2Ch4%2Ch3%2Ch2%2Ch1&baseStep=base&prefix=font-size&decimals=2&useRems=on&previewFont=Intern*/
+	/* https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=360&minRatio=1.125&maxFontSize=18&maxWidth=1536&maxRatio=1.2&steps=base%2Ch6%2Ch5%2Ch4%2Ch3%2Ch2%2Ch1&baseStep=base&prefix=font-size&decimals=2&remValue=16&previewFont=Inter */
 	--font-size-base: clamp(1rem, 0.17vw + 0.96rem, 1.13rem);
-	--font-size-h4: clamp(1.13rem, 0.51vw + 1.01rem, 1.5rem);
-	--font-size-h3: clamp(1.27rem, 1vw + 1.04rem, 2rem);
-	--font-size-h2: clamp(1.42rem, 1.69vw + 1.04rem, 2.66rem);
-	--font-size-h1: clamp(1.6rem, 2.65vw + 1rem, 3.55rem);
+	--font-size-h6: clamp(1.13rem, 0.31vw + 1.06rem, 1.35rem);
+	--font-size-h5: clamp(1.27rem, 0.48vw + 1.16rem, 1.62rem);
+	--font-size-h4: clamp(1.42rem, 0.71vw + 1.26rem, 1.94rem);
+	--font-size-h3: clamp(1.6rem, 0.99vw + 1.38rem, 2.33rem);
+	--font-size-h2: clamp(1.8rem, 1.36vw + 1.5rem, 2.8rem);
+	--font-size-h1: clamp(2.03rem, 1.81vw + 1.62rem, 3.36rem);
 }
 
 @layer base {
+
 	body {
 		font-family: Inter, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		font-size: var(--font-size-base);
@@ -28,9 +31,7 @@
 	}
 
 	:--heading {
-		@apply font-black leading-tighter;
-		margin-top: 1.5em;
-		margin-bottom: 0.3em;
+		@apply font-black tracking-tight leading-tighter mt-[0.6em] mb-[0.2em];
 	}
 
 	h4 {
