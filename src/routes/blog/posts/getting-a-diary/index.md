@@ -7,9 +7,8 @@ keywords:
   - diary
   - getting diary
   - pigpen cipher
-  - personal stuff
+  - writing
 date: 2021-04-11
-expiry: 2025-04-11
 tags:
   - personal
 ---
