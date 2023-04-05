@@ -3,11 +3,6 @@ title: Getting a diary
 description: 'Discovering My First Diary: A Personal Story - Learn why keeping a diary is important by following me on my journey through my first one'
 image: https://ik.imagekit.io/kudadam/blog/getting-a-diary/hero
 excerpt: So I started keeping a diary in second grade. It measured around 7 cm in height and 5 cm in width. I wasn't sure what to do with it, so I used it as a personal jotter.
-keywords:
-  - diary
-  - getting diary
-  - pigpen cipher
-  - writing
 date: 2021-04-11
 tags:
   - personal
