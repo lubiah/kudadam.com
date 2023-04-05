@@ -5,6 +5,7 @@ import remark_emoji from 'remark-emoji';
 import remark_torchlight from 'remark-torchlight';
 import remark_gfm from 'remark-gfm';
 import remark_slug from 'remark-slug';
+import remark_escape from './remarkPlugins/escapeEntities.js';
 import remark_containers from 'remark-containers';
 
 const config = defineConfig({
@@ -27,10 +28,6 @@ const config = defineConfig({
 				emoticon: true
 			}
 		],
-		/**
-		 * dark-plus
-		 * dracula
-		 */
 		[
 			remark_torchlight,
 			{
@@ -39,7 +36,8 @@ const config = defineConfig({
 					cache: '.torchlight-cache'
 				}
 			}
-		]
+		],
+		remark_escape
 	],
 	rehypePlugins: []
 });
