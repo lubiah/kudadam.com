@@ -65,6 +65,14 @@
 	nav.toc {
 		@apply border-l h-max sticky top-[20%];
 
+		& :global(:is(ul, ol)) {
+			@apply p-0 list-image-none;
+		}
+
+		& :global(:is(ul, ol) :is(ul, ol) :is(.toc-link)) {
+			@apply pl-8;
+		}
+
 		& :global(a) {
 			@apply pl-4 py-0.5 transition-colors duration-300 border-l-2 border-[color:transparent] hover:border-gray-300;
 		}

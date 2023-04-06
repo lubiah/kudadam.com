@@ -1,18 +1,18 @@
 ---
-title: How to install the privacy-friendly comment system Cusdis on your Svelte site
+title: 'Cusdis: a privacy-friendly comment system for websites'
 description: Learn how to install Cusdis, a privacy-friendly comment system, on your Svelte site with this
 date: 2022-03-22
 image: https://ik.imagekit.io/kudadam/blog/adding-comment-system/hero
 excerpt: Cusdis is a new lightweight, privacy-first, open-sourced comment system. It's a perfect alternative for Disqus users who want to retain their privacy, and it's also very lightweight
 tags:
-  - Svelte
+  - svelte
 ---
 
-## What is Cusdis?
+## About Cusdis
 
-Cusdis is a new lightweight, privacy-first, open-sourced comment system. It's a perfect alternative for Disqus users who want to retain their privacy, and it's also very lightweight (~5KB gzipped).
+[Cusdis](https://cusdis.com/) is a new lightweight, privacy-first, open-sourced comment system. It's a perfect alternative for Disqus users who want to retain their privacy, and it's also very lightweight (~5KB gzipped).
 
-Installing Cusdis is very easy, and its user interface is simple. Users do not need to sign up before they can comment on your website, which is very great for me because I do not want users to take "hours" to create an account to just write a single comment.
+Installing Cusdis is very easy, and its user interface is simple. Users do not need to sign up before they can comment on your website, which is very great for me because I do not want users to spend time to create an account to just write a single comment.
 
 Since Cusdis is very new, there are a few pros and cons that I would like to outline.
 
