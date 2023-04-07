@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@kudadam/remark-torchlight': ^0.0.2
   '@playwright/test': ^1.32.2
   '@poppanator/sveltekit-svg': ^3.0.0
   '@sveltejs/adapter-auto': ^2.0.0
@@ -22,13 +23,11 @@ specifiers:
   postcss-purgefonts: ^1.0.2
   prettier: ^2.8.7
   prettier-plugin-svelte: ^2.10.0
-  reading-time: ^1.5.0
   remark-breaks: ^3.0.2
   remark-containers: ^1.2.0
   remark-emoji: ^3.1.1
   remark-gfm: ^3.0.1
   remark-slug: ^7.0.1
-  remark-torchlight: ^0.0.5
   svelte: ^3.58.0
   svelte-check: ^3.2.0
   tailwindcss: ^3.3.1
@@ -39,6 +38,7 @@ specifiers:
   vitest: ^0.29.8
 
 devDependencies:
+  '@kudadam/remark-torchlight': 0.0.2
   '@playwright/test': 1.32.2
   '@poppanator/sveltekit-svg': 3.0.0_svelte@3.58.0+vite@4.2.1
   '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.15.1
@@ -60,13 +60,11 @@ devDependencies:
   postcss-purgefonts: 1.0.2
   prettier: 2.8.7
   prettier-plugin-svelte: 2.10.0_ur5pqdgn24bclu6l6i7qojopk4
-  reading-time: 1.5.0
   remark-breaks: 3.0.2
   remark-containers: 1.2.0
   remark-emoji: 3.1.1
   remark-gfm: 3.0.1
   remark-slug: 7.0.1
-  remark-torchlight: 0.0.5
   svelte: 3.58.0
   svelte-check: 3.2.0_2hvvzllqxfj4tjxqrekw73wrxm
   tailwindcss: 3.3.1_postcss@8.4.21
@@ -673,6 +671,35 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
+  /@kudadam/remark-torchlight/0.0.2:
+    resolution: {integrity: sha512-NmoudvmjahawXZ8VU1B/G5fETig11YnBKyrECcceDL2WF15qTVK3V2kOlrcadkjcBoyIcUAEhy5wbOw1X7UmBQ==}
+    dependencies:
+      '@kudadam/torchlight-cli': 0.0.0
+      hast-util-from-parse5: 7.1.2
+      parse5: 6.0.1
+      unist-util-map: 3.1.3
+    transitivePeerDependencies:
+      - debug
+    dev: true
+
+  /@kudadam/torchlight-cli/0.0.0:
+    resolution: {integrity: sha512-hCGMK60q+V7LCo8nWXhcwXojO83T6h0MRaNjpXej341OykRXZU4G3Pl0z59EuKlC3T7Cqt4I3N7YClVlRKAFnA==}
+    hasBin: true
+    dependencies:
+      axios: 0.21.4
+      chalk: 4.1.2
+      cheerio: 1.0.0-rc.12
+      chokidar: 3.5.3
+      commander: 8.3.0
+      fs-extra: 10.1.0
+      inquirer: 8.2.5
+      lodash.chunk: 4.2.0
+      lodash.get: 4.4.2
+      md5: 2.3.0
+    transitivePeerDependencies:
+      - debug
+    dev: true
+
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -801,24 +828,6 @@ packages:
     dependencies:
       mini-svg-data-uri: 1.4.4
       tailwindcss: 3.3.1_postcss@8.4.21
-    dev: true
-
-  /@torchlight-api/torchlight-cli/0.1.7:
-    resolution: {integrity: sha512-sHph49Nx/VfzwDsb43v6AQIDZQa/YQ1LtGKTmN/rEBJoW0ctMXUQUJ1c75rNQ/1n2rYLbQLf7s008/jgLvkEDg==}
-    hasBin: true
-    dependencies:
-      axios: 0.21.4
-      chalk: 4.1.2
-      cheerio: 1.0.0-rc.12
-      chokidar: 3.5.3
-      commander: 8.3.0
-      fs-extra: 10.1.0
-      inquirer: 8.2.5
-      lodash.chunk: 4.2.0
-      lodash.get: 4.4.2
-      md5: 2.3.0
-    transitivePeerDependencies:
-      - debug
     dev: true
 
   /@trysound/sax/0.2.0:
@@ -1261,7 +1270,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001474
-      electron-to-chromium: 1.4.352
+      electron-to-chromium: 1.4.353
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10_browserslist@4.21.5
     dev: true
@@ -1425,8 +1434,8 @@ packages:
       restore-cursor: 3.1.0
     dev: true
 
-  /cli-spinners/2.7.0:
-    resolution: {integrity: sha512-qu3pN8Y3qHNgE2AFweciB1IfMnmZ/fsNTEE+NOFjmGB2F/7rLhnhzppvpCnN4FovtP26k8lHyy9ptEbNwWFLzw==}
+  /cli-spinners/2.8.0:
+    resolution: {integrity: sha512-/eG5sJcvEIwxcdYM86k5tPwn0MUzkX5YY3eImTGpJOZgVe4SdTMY14vQpcxgBzJ0wXwAYrS8E+c3uHeK4JNyzQ==}
     engines: {node: '>=6'}
     dev: true
 
@@ -1765,8 +1774,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium/1.4.352:
-    resolution: {integrity: sha512-ikFUEyu5/q+wJpMOxWxTaEVk2M1qKqTGKKyfJmod1CPZxKfYnxVS41/GCBQg21ItBpZybyN8sNpRqCUGm+Zc4Q==}
+  /electron-to-chromium/1.4.353:
+    resolution: {integrity: sha512-IdJVpMHJoBT/nn0GQ02wPfbhogDVpd1ud95lP//FTf5l35wzxKJwibB4HBdY7Q+xKPA1nkZ0UDLOMyRj5U5IAQ==}
     dev: true
 
   /emoji-regex/8.0.0:
@@ -3023,8 +3032,8 @@ packages:
       uvu: 0.5.6
     dev: true
 
-  /micromark-extension-gfm-footnote/1.0.4:
-    resolution: {integrity: sha512-E/fmPmDqLiMUP8mLJ8NbJWJ4bTw6tS+FEQS8CcuDtZpILuOb2kjLqPEeAePF1djXROHXChM/wPJw0iS4kHCcIg==}
+  /micromark-extension-gfm-footnote/1.1.0:
+    resolution: {integrity: sha512-RWYce7j8+c0n7Djzv5NzGEGitNNYO3uj+h/XYMdS/JinH1Go+/Qkomg/rfxExFzYTiydaV6GLeffGO5qcJbMPA==}
     dependencies:
       micromark-core-commonmark: 1.0.6
       micromark-factory-space: 1.0.0
@@ -3077,7 +3086,7 @@ packages:
     resolution: {integrity: sha512-p2sGjajLa0iYiGQdT0oelahRYtMWvLjy8J9LOCxzIQsllMCGLbsLW+Nc+N4vi02jcRJvedVJ68cjelKIO6bpDA==}
     dependencies:
       micromark-extension-gfm-autolink-literal: 1.0.3
-      micromark-extension-gfm-footnote: 1.0.4
+      micromark-extension-gfm-footnote: 1.1.0
       micromark-extension-gfm-strikethrough: 1.0.5
       micromark-extension-gfm-table: 1.0.5
       micromark-extension-gfm-tagfilter: 1.0.2
@@ -3465,7 +3474,7 @@ packages:
       bl: 4.1.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
-      cli-spinners: 2.7.0
+      cli-spinners: 2.8.0
       is-interactive: 1.0.0
       is-unicode-supported: 0.1.0
       log-symbols: 4.1.0
@@ -3792,7 +3801,7 @@ packages:
       postcss: 8.4.21
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
-      resolve: 1.22.1
+      resolve: 1.22.2
     dev: true
 
   /postcss-initial/4.0.1_postcss@8.4.21:
@@ -4152,10 +4161,6 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /reading-time/1.5.0:
-    resolution: {integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==}
-    dev: true
-
   /regexp.prototype.flags/1.4.3:
     resolution: {integrity: sha512-fjggEOO3slI6Wvgjwflkc4NFRCTZAu5CnNfBd5qOMYhWdn67nJBBu34/TkD++eeFmd8C9r9jfXJ27+nSiRkSUA==}
     engines: {node: '>= 0.4'}
@@ -4208,17 +4213,6 @@ packages:
       unist-util-visit: 4.1.2
     dev: true
 
-  /remark-torchlight/0.0.5:
-    resolution: {integrity: sha512-aFnnUfbIGYFYr1HQDT8AVHBVsRRswLBdOM4ht9YB8e+gyV9UKN64b9i7xwRqWu78bzXTmxhqcQxnIaVNQO4iWA==}
-    dependencies:
-      '@torchlight-api/torchlight-cli': 0.1.7
-      hast-util-from-parse5: 7.1.2
-      parse5: 6.0.1
-      unist-util-map: 3.1.3
-    transitivePeerDependencies:
-      - debug
-    dev: true
-
   /resolve-alpn/1.2.1:
     resolution: {integrity: sha512-0a1F4l73/ZFZOakJnQ3FvkJ2+gSTQWz/r2KE5OdDY0TxPm5h4GkqkWWfM47T7HsbnOtcJVEF4epCVy6u7Q3K+g==}
     dev: true
@@ -4228,8 +4222,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /resolve/1.22.1:
-    resolution: {integrity: sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==}
+  /resolve/1.22.2:
+    resolution: {integrity: sha512-Sb+mjNHOULsBv818T40qSPeRiuWLyaGMa5ewydRLFimneixmVy2zdivRl+AF6jaYPC8ERxGDmFSiqui6SfPd+g==}
     hasBin: true
     dependencies:
       is-core-module: 2.11.0
@@ -4674,7 +4668,7 @@ packages:
       postcss-selector-parser: 6.0.11
       postcss-value-parser: 4.2.0
       quick-lru: 5.1.1
-      resolve: 1.22.1
+      resolve: 1.22.2
       sucrase: 3.31.0
     transitivePeerDependencies:
       - ts-node
@@ -4995,7 +4989,7 @@ packages:
     dependencies:
       esbuild: 0.17.15
       postcss: 8.4.21
-      resolve: 1.22.1
+      resolve: 1.22.2
       rollup: 3.20.2
     optionalDependencies:
       fsevents: 2.3.2
@@ -5029,7 +5023,7 @@ packages:
       '@types/node': 18.15.11
       esbuild: 0.17.15
       postcss: 8.4.21
-      resolve: 1.22.1
+      resolve: 1.22.2
       rollup: 3.20.2
     optionalDependencies:
       fsevents: 2.3.2

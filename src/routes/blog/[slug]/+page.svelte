@@ -24,7 +24,7 @@
 		class="w-full h-auto max-h-[250px] tablet:max-h-[400px] mb-6 tablet:mb-8 laptop:mb-10 !col-[1/-1]"
 	/>
 	<ul
-		class="text-gray-500 mb-6 tablet:mb-8 laptop:mb-10 text-xs laptop:text-base flex flex-col tablet:flex-row gap-2 tablet:gap-x-6 mx-4 laptop:mx-0"
+		class="text-gray-500 mb-6 tablet:mb-8 laptop:mb-10 text-xs laptop:text-base flex flex-col tablet:flex-row gap-2 tablet:gap-x-6 mx-4 laptop:mx-0 p-0"
 	>
 		<li class="flex items-center gap-x-1">
 			<ClockIcon height="16" width="16" /><span>{data.metadata.readingTime}</span>
