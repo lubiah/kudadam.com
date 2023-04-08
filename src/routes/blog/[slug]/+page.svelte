@@ -33,7 +33,11 @@
 			<CalendarIcon height="16" width="16" /><time
 				datetime={new Date(data.metadata.date).toISOString()}
 				>{new Date(data.metadata.date).toLocaleString('en-US', { dateStyle: 'long' })}</time
-			>
+			>{#if data.metadata.updated}
+				(Updated on<time datetime={new Date(data.metadata.updated).toISOString()}
+					>{new Date(data.metadata.updated).toLocaleString('en-US', { dateStyle: 'long' })}</time
+				>)
+			{/if}
 		</li>
 	</ul>
 	<div class="laptop:flex justify-between">

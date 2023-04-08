@@ -10,6 +10,7 @@ export const getArticlesList = async (): Promise<BlogPost[]> => {
 		const html = index.default.render()['html'];
 		const metadata: BlogPost = { ...index.metadata, slug };
 		metadata.date = new Date(index.metadata.date);
+		if (index.metadata.updated) metadata.updated = new Date(index.metadata.updated);
 		metadata.readingTime = readingTimeModule(html).text;
 		files.push(metadata);
 	}
