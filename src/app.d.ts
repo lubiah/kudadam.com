@@ -16,6 +16,7 @@ declare interface BlogPost {
 	image: string;
 	slug: string;
 	date: Date;
+	updated?: Date;
 }
 
 // https://github.com/poppa/sveltekit-svg
