@@ -10,7 +10,9 @@
 
 	onMount(async () => {
 		const article = document.querySelector('article');
-		if (article) tocSpy(article);
+		if (article) {
+			tocSpy(article);
+		}
 	});
 </script>
 
@@ -45,7 +47,7 @@
 			<svelte:component this={data.component} />
 		</article>
 		<nav class="toc hidden laptop:block">
-			<p class="font-bold mb-3 pl-4">Table of contents</p>
+			<p class="font-bold mb-3">Table of contents</p>
 			<div>
 				{@html data.toc}
 			</div>
@@ -67,7 +69,7 @@
 	}
 
 	nav.toc {
-		@apply border-l h-max sticky top-[20%];
+		@apply h-max sticky top-[20%];
 
 		& :global(:is(ul, ol)) {
 			@apply p-0 list-image-none;
@@ -78,15 +80,10 @@
 		}
 
 		& :global(a) {
-			@apply pl-4 py-0.5 transition-colors duration-300 border-l-2 border-[color:transparent] hover:border-gray-300;
+			@apply pl-4 py-1 px-0.5 block transition-colors duration-300 border-l-2 hover:[&:not(.active)]:bg-gray-50;
 		}
-
-		& :global(li) {
-			@apply py-1;
-		}
-
 		& :global(.active) {
-			@apply border-l-2 border-secondary-500 text-secondary-600;
+			@apply border-l-2 border-primary-500 text-primary-500;
 		}
 
 		& :global(*) {

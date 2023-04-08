@@ -13,7 +13,7 @@ const spy = (container: HTMLElement) => {
 			});
 		},
 		{
-			rootMargin: '0px 0px -90% 0px'
+			rootMargin: '0px 0px -80% 0px'
 		}
 	);
 
@@ -21,11 +21,10 @@ const spy = (container: HTMLElement) => {
 		observer.observe(heading);
 	});
 
-	return {
-		stop: () => {
-			observer.disconnect();
-		}
+	return () => {
+		observer.disconnect();
+		console.log('Destroyed');
+		// TODO: Test this code after adding a navbar
 	};
 };
-
 export default spy;
