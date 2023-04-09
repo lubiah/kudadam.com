@@ -59,7 +59,7 @@ So in our code, we will write:
 
 ```python
 brave = AppKiller("brave.exe","21:21")
-brave.watch() # [tl! focus]
+brave.watch()
 node_js = AppKiller("node.exe","08:30")
 node_js.watch()
 ```
