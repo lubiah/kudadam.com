@@ -23,7 +23,7 @@
 	<img
 		src={data.metadata.image}
 		alt=""
-		class="w-full h-auto max-h-[250px] tablet:max-h-[400px] laptop:max-h-[550px] mb-6 tablet:mb-8 laptop:mb-10 !col-[1/-1]"
+		class="w-full h-auto max-h-[250px] tablet:max-h-[400px] laptop:object-cover mb-6 tablet:mb-8 laptop:mb-10 !col-[1/-1]"
 	/>
 	<ul
 		class="text-gray-500 mb-6 tablet:mb-8 laptop:mb-10 text-xs laptop:text-base flex flex-col tablet:flex-row gap-2 tablet:gap-x-6 mx-4 laptop:mx-0 p-0"
@@ -46,12 +46,14 @@
 		<article>
 			<svelte:component this={data.component} />
 		</article>
-		<nav class="toc hidden laptop:block">
-			<p class="font-bold mb-3">Table of contents</p>
-			<div>
-				{@html data.toc}
-			</div>
-		</nav>
+		{#if data.toc}
+			<nav class="toc hidden laptop:block">
+				<p class="font-bold mb-3">Table of contents</p>
+				<div>
+					{@html data.toc}
+				</div>
+			</nav>
+		{/if}
 	</div>
 </main>
 

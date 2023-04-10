@@ -4,6 +4,7 @@ import type { Cheerio, AnyNode } from 'cheerio';
 const generateTableOfContents = (html: string) => {
 	const $ = load(html);
 	const HEADINGS = $('h2,h3,h4,h5,h6');
+	if (HEADINGS.length === 0) return null;
 	const UL_ELEMENT = $('<ul></ul>');
 	const NAV_ELEMENT = $('<nav></nav>');
 
@@ -65,6 +66,7 @@ const generateTableOfContents = (html: string) => {
 	});
 
 	NAV_ELEMENT.append(UL_ELEMENT);
+
 	return NAV_ELEMENT.html();
 };
 
