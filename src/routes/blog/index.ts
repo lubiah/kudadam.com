@@ -15,5 +15,7 @@ export const getArticlesList = async (): Promise<BlogPost[]> => {
 		files.push(metadata);
 	}
 
+	files.sort((a: BlogPost, b: BlogPost) => b.date.getTime() - a.date.getTime()); //arranges the articles in chronological order
+
 	return files;
 };
