@@ -1,9 +1,9 @@
 ---
 title: Migrating my website’s image hosting from Sirv to Imagekit with Python
 description: Learn how to migrate your website’s image hosting from Sirv to Imagekit with this step-by-step guide using Python. Improve your website’s performance and user experience with ease!
+excerpt: I moved all my images from Sirv to Imagekit due to the small amount of bandwidth for the free account. The process wasn’t tedious because I automated everything with Python
+image: https://ik.imagekit.io/kudadam/blog/migrate-sirv-imagekit/hero
 date: 2022-05-07
-expiry: 2023-05-07
-excerpt: A little write-up about how I used python to migrate all my images from sirv to imagekit
 tags:
   - python
   - imagekit
