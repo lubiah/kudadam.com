@@ -86,4 +86,4 @@ The files are then uploaded to ImageKit once we go over the data in the CSV file
 
 ## Outro
 
-So this is how I transferred all of my images from Sirv to ImageKit. The procedure described here will also move your photographs to ImageKit. If you run across any issues, please post them in the comments area.
+So this is how I transferred all of my images from Sirv to ImageKit. The procedure described here will also move your images to ImageKit. If you run across any issues, please post them in the comments area.
