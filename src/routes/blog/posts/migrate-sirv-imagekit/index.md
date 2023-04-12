@@ -17,7 +17,7 @@ I've been using Sirv to optimise the photos on my website since I started bloggi
 
 The free plan provides 500 MB of storage and a monthly bandwidth of 2GB.
 
-![The bandwidth in a few days](https://ik.imagekit.io/kudadam/blog/migrate-sirv-imagekit/monthly-bandwith_2lycAl4mP.png)
+![The bandwidth in a few days](https://ik.imagekit.io/kudadam/blog/migrate-sirv-imagekit/sirv-bandwidth-in-few-days)
 
 The graphic above shows the bandwidth usage from April 30 to May 6, and it's 1.37 GB, a few megabytes shy of 2GB, therefore I had to hunt for another solution. I would have been OK if I had upgraded to the business plan, but I am not yet working, so I must hunt for free options that will meet my needs. After much investigation, the best alternative was [ImageKit](https://imagekit.io/), which provided 20 GB of storage and 20 GB of bandwidth, just what I was looking for:relieved:.
 
