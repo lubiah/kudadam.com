@@ -9,7 +9,7 @@ tags:
   - sveltekit
 ---
 
-My theme color has always flickered on page load since I started using Svelte. Finally, I discovered a workaround.
+My theme colour has always flickered on page load since I started using Svelte. Finally, I discovered a workaround.
 
 ## Problem
 
