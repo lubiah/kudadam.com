@@ -4,9 +4,11 @@ import remark_breaks from 'remark-breaks';
 import remark_emoji from 'remark-emoji';
 import remark_torchlight from '@kudadam/remark-torchlight';
 import remark_gfm from 'remark-gfm';
+import remark_parse from 'remark-parse';
 import remark_slug from 'remark-slug';
 import remark_escape from './remarkPlugins/escapeEntities.js';
-import remark_containers from 'remark-containers';
+import remark_directive from 'remark-directive';
+import remark_notes from './remarkPlugins/remarkNotes.js';
 
 const config = defineConfig({
 	extensions: ['.md'],
@@ -16,15 +18,16 @@ const config = defineConfig({
 	},
 
 	remarkPlugins: [
+		remark_parse,
+		remark_directive,
+		remark_notes,
 		remark_breaks,
 		remark_slug,
-		remark_containers,
 		remark_gfm,
 		[
 			remark_emoji,
 			{
 				accessible: true,
-				padSpaceAfter: true,
 				emoticon: true
 			}
 		],
