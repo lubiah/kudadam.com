@@ -85,7 +85,7 @@
 			@apply pl-4 py-1 px-0.5 block transition-colors duration-300 border-l-2 hover:[&:not(.active)]:bg-gray-50;
 		}
 		& :global(.active) {
-			@apply border-l-2 border-secondary-500 text-secondary-600;
+			@apply border-l-2 border-primary-400 text-primary-500;
 		}
 
 		& :global(*) {
