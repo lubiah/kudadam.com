@@ -45,7 +45,11 @@ Okay, so you can write this code in the component in which you use to toggle in-
 </svelte:head>
 ```
 
-### Explanation
+:::note
+
+Hello World
+
+:::
 
 To access the head element, we used the `<svelte:head>` component. Then we created the script tag just as we would on our normal HTML pages. The next statements are the important ones. The reason why I used `if (document)` is that this code first gets evaluated on the server before being rendered on the client, so if you try to access the document on the server, it will pop up an error.
  I know SvelteKit provides the `{ browser }` constant through the `$app/env module`, but mind you, this is not available in the custom script tag we made. You will need to use your own workaround and that’s why we are using document to check.
