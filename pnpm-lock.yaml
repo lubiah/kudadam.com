@@ -25,6 +25,7 @@ specifiers:
   remark-breaks: ^3.0.2
   remark-directive: ^2.0.1
   remark-emoji: ^3.1.1
+  remark-frontmatter: ^4.0.1
   remark-gfm: ^3.0.1
   remark-parse: ^10.0.1
   remark-slug: ^7.0.1
@@ -62,6 +63,7 @@ devDependencies:
   remark-breaks: 3.0.2
   remark-directive: 2.0.1
   remark-emoji: 3.1.1
+  remark-frontmatter: 4.0.1
   remark-gfm: 3.0.1
   remark-parse: 10.0.1
   remark-slug: 7.0.1
@@ -1958,6 +1960,12 @@ packages:
       reusify: 1.0.4
     dev: true
 
+  /fault/2.0.1:
+    resolution: {integrity: sha512-WtySTkS4OKev5JtpHXnib4Gxiurzh5NCGvWrFaZ34m6JehfTUhKZvn9njTfw48t6JumVQOmrKqpmGcdwxnhqBQ==}
+    dependencies:
+      format: 0.2.2
+    dev: true
+
   /figures/3.2.0:
     resolution: {integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==}
     engines: {node: '>=8'}
@@ -2007,6 +2015,11 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
+    dev: true
+
+  /format/0.2.2:
+    resolution: {integrity: sha512-wzsgA6WOq+09wrU1tsJ09udeR/YZRaeArL9e1wPbFg3GG2yDnC2ldKpxs4xunpFF9DgqCqOIra3bc1HWrJ37Ww==}
+    engines: {node: '>=0.4.x'}
     dev: true
 
   /fraction.js/4.2.0:
@@ -2586,6 +2599,14 @@ packages:
       - supports-color
     dev: true
 
+  /mdast-util-frontmatter/1.0.1:
+    resolution: {integrity: sha512-JjA2OjxRqAa8wEG8hloD0uTU0kdn8kbtOWpPP94NBkfAlbxn4S8gCGf/9DwFtEeGPXrDcNXdiDjVaRdUFqYokw==}
+    dependencies:
+      '@types/mdast': 3.0.11
+      mdast-util-to-markdown: 1.5.0
+      micromark-extension-frontmatter: 1.1.0
+    dev: true
+
   /mdast-util-gfm-autolink-literal/1.0.3:
     resolution: {integrity: sha512-My8KJ57FYEy2W2LyNom4n3E7hKTuQk/0SES0u16tjA9Z3oFkF4RrC/hPAPgjlSpezsOvI8ObcXcElo92wn5IGA==}
     dependencies:
@@ -2728,6 +2749,15 @@ packages:
       micromark-util-types: 1.0.2
       parse-entities: 4.0.1
       uvu: 0.5.6
+    dev: true
+
+  /micromark-extension-frontmatter/1.1.0:
+    resolution: {integrity: sha512-0nLelmvXR5aZ+F2IL6/Ed4cDnHLpL/VD/EELKuclsTWHrLI8UgxGHEmeoumeX2FXiM6z2WrBIOEcbKUZR8RYNg==}
+    dependencies:
+      fault: 2.0.1
+      micromark-util-character: 1.1.0
+      micromark-util-symbol: 1.0.1
+      micromark-util-types: 1.0.2
     dev: true
 
   /micromark-extension-gfm-autolink-literal/1.0.3:
@@ -3822,6 +3852,15 @@ packages:
       emoticon: 4.0.1
       mdast-util-find-and-replace: 2.2.2
       node-emoji: 1.11.0
+    dev: true
+
+  /remark-frontmatter/4.0.1:
+    resolution: {integrity: sha512-38fJrB0KnmD3E33a5jZC/5+gGAC2WKNiPw1/fdXJvijBlhA7RCsvJklrYJakS0HedninvaCYW8lQGf9C918GfA==}
+    dependencies:
+      '@types/mdast': 3.0.11
+      mdast-util-frontmatter: 1.0.1
+      micromark-extension-frontmatter: 1.1.0
+      unified: 10.1.2
     dev: true
 
   /remark-gfm/3.0.1:

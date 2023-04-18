@@ -92,6 +92,29 @@
 	}
 }
 
+
+.note {
+	@apply border-l-4 p-2 rounded-s-xxs flex flex-col gap-y-2 tablet:flex-row tablet:relative my-[1.7rem] tablet:pl-6 tablet:pt-6;
+
+	& .content {
+		& :first-child {
+			@apply pt-0 mt-0;
+		}
+	}
+
+	& .icon {
+		@apply tablet:absolute tablet:top-0 tablet:left-0 tablet:bg-white tablet:rounded-full tablet:translate-x-[-50%] tablet:translate-y-[-50%] tablet:p-2;
+	}
+}
+
+.note--warning {
+	@apply border-warning-500 bg-warning-50;
+
+	& .icon svg path {
+		@apply stroke-warning-600;
+	}
+}
+
 @layer utilities {
 	.border-color {
 		@apply border-gray-300

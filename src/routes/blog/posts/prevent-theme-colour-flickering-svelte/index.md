@@ -18,7 +18,7 @@ Here's a gif of the issue.
 
 ![How the screen was flickering before I found a solution](https://ik.imagekit.io/kudadam/blog/prevent-theme-colour-flickering-svelte/flickering.gif)
 
-So as you can see, when the page is reloaded, the light theme is first shown, then after the document has finished loading, the `onMount` sets the theme colour.
+So as you can see, when the page is reloaded, the light theme is first shown, then after the document has finished loading, the `onMount` function sets the theme colour.
 
 ## Solution
 
@@ -45,14 +45,11 @@ Okay, so you can write this code in the component in which you use to toggle in-
 </svelte:head>
 ```
 
-:::note
-
-Hello World
-
+:::note{type=warning}
+Do not use the browser constant which is provided in SvelteKit's `$app/environment` module. The reason is that inside the custom script tag we created, the browser constant won't be defined.
 :::
 
 To access the head element, we used the `<svelte:head>` component. Then we created the script tag just as we would on our normal HTML pages. The next statements are the important ones. The reason why I used `if (document)` is that this code first gets evaluated on the server before being rendered on the client, so if you try to access the document on the server, it will pop up an error.
- I know SvelteKit provides the `{ browser }` constant through the `$app/env module`, but mind you, this is not available in the custom script tag we made. You will need to use your own workaround and that’s why we are using document to check.
  Then on the next line, we try to retrieve the theme from the localStorage. If it’s not set, it defaults to the "light" theme.
  Then the next steps are the addition of classes and setting of the theme in the localStorage.
 
