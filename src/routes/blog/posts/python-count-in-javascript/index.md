@@ -1,19 +1,12 @@
 ---
-title: 'JavaScript: How To Find The Number Of Times An Item Appears In An Array'
-description: Learn how to find the number of times an item appears in an array in JavaScript
-category: programming
-excerpt: Python has a count method for finding the number of times an item appears in an array, learn how to do that in JavaScript since it does not have that method
-keywords:
-  - javascript count
-  - array count javascript
-  - find item number array
-  - javascript array count
+title: A JavaScript Solution for Counting Items in an Array
+description: Struggling with counting items in a JavaScript array? Check out my latest blog post for an easy-to-use solution and let me know if it helps!
+image: https://ik.imagekit.io/kudadam/blog/python-count-in-javascript/hero
+excerpt: Python has a count method to find the number of times an item appears in an array. Learn how to accomplish this in JavaScript, as it does not have that method.
 date: 2021-10-23
 tags:
-  - python
   - javascript
 modified: 2021-10-23 20:45
-expiry: 2023-01-01
 ---
 
 If you have a Python background, you are probably familiar with the `count` method in the list class.
