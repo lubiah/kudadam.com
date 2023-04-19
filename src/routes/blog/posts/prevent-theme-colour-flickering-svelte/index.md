@@ -9,24 +9,26 @@ tags:
   - sveltekit
 ---
 
-My theme colour has always flickered on page load since I started using Svelte. Finally, I discovered a workaround.
+My theme colour used to flicker after the page had finished loading. Eventually, I found a way to fix it.
 
-## Problem
+## The problem
 
-Initially, I changed the theme colour of my website within the `onMount` function, however the theme colour was always flickering. The cause was that the body loads before the `onMount` function sets the theme colour.
-Here's a gif of the issue.
+Initially, I used to change the theme colour of my website within the `onMount` function. However, the theme colour was always flickering. The cause of this was that the body loads before the `onMount` function sets the theme colour.
 
-![How the screen was flickering before I found a solution](https://ik.imagekit.io/kudadam/blog/prevent-theme-colour-flickering-svelte/flickering.gif)
+<figure>
+	<img alt="How the screen was flickering before I found a solution" src="https://ik.imagekit.io/kudadam/blog/prevent-theme-colour-flickering-svelte/flickering.gif">
+	<figcaption>A gif showing the bug</figcaption>
+</figure>
 
-So as you can see, when the page is reloaded, the light theme is first shown, then after the document has finished loading, the `onMount` function sets the theme colour.
+So as you can see, when the page is reloaded, the light theme is first shown, and then after the document has finished loading, the `onMount` function sets the theme colour.
 
 ## Solution
 
-The only likely option is to change the theme colour before the body loads. How do we go about it? We insert a script tag into the head element, and this code is executed before the body is loaded. That is the most effective approach to prevent colour flickering.
+The only likely option is to set the theme colour before the body loads. We do this by inserting a script tag into the head element, and this code is executed before the body is loaded. That is the most effective approach to prevent colour flickering.
 
 ## The Code
 
-Okay, so you can write this code in the component in which you use to toggle in-between the themes.
+Okay, so you can write this code in the component which you use to toggle between the themes.
 
 ```svelte
 <svelte:head>
@@ -45,16 +47,9 @@ Okay, so you can write this code in the component in which you use to toggle in-
 </svelte:head>
 ```
 
-:::note{type=warning}
-Do not use the browser constant which is provided in SvelteKit's `$app/environment` module. The reason is that inside the custom script tag we created, the browser constant won't be defined.
-:::
+To access the head element, we used the `<svelte:head>` component. Next, we created the script tag just as we would on our normal HTML pages. In the following lines, we attempt to retrieve the theme from `localStorage`. If it’s not set, it defaults to the “light” theme. The next steps involve adding classes and setting the theme in `localStorage`. Finally, observe how the page loads without flickering.
 
-To access the head element, we used the `<svelte:head>` component. Then we created the script tag just as we would on our normal HTML pages. The next statements are the important ones. The reason why I used `if (document)` is that this code first gets evaluated on the server before being rendered on the client, so if you try to access the document on the server, it will pop up an error.
- Then on the next line, we try to retrieve the theme from the localStorage. If it’s not set, it defaults to the "light" theme.
- Then the next steps are the addition of classes and setting of the theme in the localStorage.
-
-Now, look at how the page loads without flickering.
-
-![Now the page loads without flickering](https://ik.imagekit.io/kudadam/blog/prevent-theme-colour-flickering-svelte/non-flickering.gif)
-
-Happy Coding!:smile:
+<figure>
+	<img alt="Now the page loads without flickering" src="https://ik.imagekit.io/kudadam/blog/prevent-theme-colour-flickering-svelte/non-flickering.gif">
+	<figcaption>Now the page doesn't flicker again</figcaption>
+</figure>

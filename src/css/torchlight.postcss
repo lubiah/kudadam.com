@@ -16,15 +16,15 @@ pre.torchlight .summary-caret {
   but are within a code block that contains any focus lines.
 */
 .torchlight.has-focus-lines .line:not(.line-focus) {
-    transition: filter 0.35s, opacity 0.35s;
-    filter: blur(.095rem);
-    opacity: .65;
+	transition: filter 0.35s, opacity 0.35s;
+	filter: blur(0.095rem);
+	opacity: 0.65;
 }
- 
+
 /*
   When the code block is hovered, bring all the lines into focus.
 */
 .torchlight.has-focus-lines:hover .line:not(.line-focus) {
-    filter: blur(0px);
-    opacity: 1;
+	filter: blur(0px);
+	opacity: 1;
 }
