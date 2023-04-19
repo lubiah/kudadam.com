@@ -87,6 +87,20 @@
 		@apply my-[1em]
 	}
 
+	figure {
+		& * {
+			@apply my-0 py-0;
+		}
+
+		& img {
+			@apply mb-2.5;
+		}
+
+		& figcaption {
+			@apply text-sm text-center italic text-gray-500;
+		}
+	}
+
 	code:not(.torchlight) {
 		@apply before:content-['`'] after:content-['`'] break-words;
 	}
@@ -114,6 +128,7 @@
 		@apply stroke-warning-600;
 	}
 }
+
 
 @layer utilities {
 	.border-color {
