@@ -47,7 +47,7 @@
 			<svelte:component this={data.component} />
 		</article>
 		{#if data.toc}
-			<nav class="toc hidden laptop:block">
+			<nav class="toc hidden max-w-[250px] laptop:block">
 				<p class="font-bold mb-3">Table of contents</p>
 				<div>
 					{@html data.toc}
