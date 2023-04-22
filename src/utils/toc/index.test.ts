@@ -4,9 +4,13 @@ import { load } from 'cheerio';
 
 describe('generateTableOfContents', () => {
 	test('returns a string', () => {
-		const html = '<h1>Test</h1>';
+		const html = '<h2>Test</h2>';
 		const toc = generateTableOfContents(html);
 		expect(typeof toc).toBe('string');
+	});
+
+	test('returns null if no table of contents were found', () => {
+		expect(typeof generateTableOfContents('')).toBe('object');
 	});
 
 	test('contains all headings', () => {
