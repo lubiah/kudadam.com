@@ -74,7 +74,7 @@ Since I was already storing my page hit counts in an SQLite database, I had to m
 
 ## Integrating It Into My Blog
 
-After adding all the existing data, it was now time to show the data inside the blog page. Since am using Svelte, I make a fetch request to the `hit` endpoint to get the data, then I display it inside the code.
+After adding all the existing data, it was now time to show the data inside the blog page. Since am using Svelte, I make a fetch request to the `hit` endpoint to get the data, then I display it.
 
 Here's the code.
 
