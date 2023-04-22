@@ -41,7 +41,6 @@ Upon a request to a page with a URL like [/blog/getting-a-diary](/blog/getting-a
 
 ```js
 const crawler = new fdir().glob('*.md');
-dat;
 const files = crawler.crawl('blog').sync();
 file = files.map((file) => file.slug === slug);
 ```
