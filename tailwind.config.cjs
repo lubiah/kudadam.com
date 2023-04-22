@@ -53,6 +53,19 @@ const config = {
 				900: '#78350f',
 				950: '#451a03'
 			},
+			info: {
+				50: '#F1F5FE',
+				100: '#E3EBFC',
+				200: '#C2D4F9',
+				300: '#9DB9F6',
+				400: '#6E98F2',
+				500: '#2563EB',
+				600: '#1555E0',
+				700: '#124AC4',
+				800: '#0F3C9F',
+				900: '#0A2B70',
+				950: '#09235D'
+			},
 			gray: colours.neutral,
 			secondary: colours.purple,
 			white: 'white'
