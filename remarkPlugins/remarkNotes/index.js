@@ -3,7 +3,7 @@ import icons from './icons.json' assert { type: 'json' };
 
 /** @typedef {import('remark-directive')} */
 
-const ALLOWED_TYPES = ['warning'];
+const ALLOWED_TYPES = ['warning', 'info'];
 
 const remarkNotes = () => {
 	return (tree, file) => {
