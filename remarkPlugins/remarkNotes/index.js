@@ -1,7 +1,5 @@
 import { visit } from 'unist-util-visit';
-import icons from './icons.json' assert { type: 'json' };
-
-/** @typedef {import('remark-directive')} */
+import icons from './icons.js';
 
 const ALLOWED_TYPES = ['warning', 'info'];
 
