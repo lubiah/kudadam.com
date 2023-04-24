@@ -62,7 +62,7 @@
 		@apply grid grid-cols-[1fr_min(65ch,calc(100%-32px))_1fr] laptop:grid-cols-[65ch_1fr];
 
 		& > :global(:first-child) {
-			@apply mt-0 pt-0;
+			@apply mt-0;
 		}
 	}
 
