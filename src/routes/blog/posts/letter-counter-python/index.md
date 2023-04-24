@@ -57,3 +57,5 @@ def letter_counter(text):
 
 If you run the modified code, you will realize it excludes non-letters from the string.
 What we did was to import the `ascii_letters` constant from the string module, then before adding a character to the `dict` variable, we check if the current character is included in the letters constant. if it is, we add it, meaning it's a letter. Else, we exclude it.
+
+<!-- TODO: Add interactive demo>
