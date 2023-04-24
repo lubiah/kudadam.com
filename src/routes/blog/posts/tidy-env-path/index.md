@@ -9,6 +9,8 @@ tags:
   - windows
 ---
 
+<!--TODO: Add more imagery and graphs -->
+
 The more you install and uninstall software, the more your environment path gets filled with dead paths. Just now, I was fidgeting with my environment path when I found that it was dirty. Dirty as in the sense that I found dead path links inside my environment path. So, I decided to clean it.
 
 ## What is Environment Variable

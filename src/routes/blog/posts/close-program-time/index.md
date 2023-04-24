@@ -10,6 +10,8 @@ tags:
   - windows
 ---
 
+<!--TODO: Add more infor -->
+
 Out of boredom today, I decided to create a Python application capable of automatically closing other applications at the time specified. This could be a perfect idea for an application, but I do not think I will make it now. Maybe later.
 
 For now, I'm going to name the programme "App Killer." Sounds cool, right? 

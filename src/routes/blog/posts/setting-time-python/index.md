@@ -10,6 +10,8 @@ tags:
 date: 2021-07-14
 ---
 
+<!--TODO: Add more info -->
+
 Setting your computer's time whenever something goes wrong might be tedious... Fortunately, the procedure can be automated.
 
 When the CMOS battery inside my computer expired a few months ago, I had a problem with my computer's time. I had to set it on each boot, which was tedious, so I decided to write a Python script to automate the entire process.

@@ -9,6 +9,10 @@ tags:
   - sveltekit
 ---
 
+<!--TODO: Make it more informative
+Show images about how the browser loads the pages and how this causes the page to flicker
+ -->
+
 My theme colour used to flicker after the page had finished loading. Eventually, I found a way to fix it.
 
 ## The problem
